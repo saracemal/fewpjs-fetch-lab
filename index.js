@@ -1,5 +1,15 @@
 function fetchBooks() {
+  fetch('https://anapioficeandfire.com/api/books')
+//     then(function(response) {
+// //   return response.json();
+// // }).then(function(json) {
+// //   console.log(json);
+// //   console.log(`Holy cow! There are ${json["number"]} humans in space.`);
+// // }); 
+  .then(resp => resp.json())
+  .then(json => renderBooks(json));
 
+  // renderBooks()
 }
 
 function renderBooks(books) {
@@ -14,3 +24,11 @@ function renderBooks(books) {
 document.addEventListener('DOMContentLoaded', function() {
   fetchBooks()
 })
+
+// etch('http://api.open-notify.org/astros.json')
+//  .then(function(response) {
+//   return response.json();
+// }).then(function(json) {
+//   console.log(json);
+//   console.log(`Holy cow! There are ${json["number"]} humans in space.`);
+// }); 
